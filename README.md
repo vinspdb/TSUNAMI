@@ -4,7 +4,7 @@
 
 *Vincenzo Pasquadibisceglie, Annalisa Appice, Giuseppe Ieva, Donato Malerba*
 
-[*TSUNAMI - an explainable PPM approach for customer churn prediction in evolving retail data environments*]([https://www.sciencedirect.com/science/article/pii/S0952197623006450?dgcid=author](https://link.springer.com/article/10.1007/s10844-023-00838-5)https://link.springer.com/article/10.1007/s10844-023-00838-5)
+[*TSUNAMI - an explainable PPM approach for customer churn prediction in evolving retail data environments*](https://link.springer.com/article/10.1007/s10844-023-00838-5)
 
 ```
 @Article{Pasquadibisceglie2023,
