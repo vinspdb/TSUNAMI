@@ -17,11 +17,11 @@ tf.random.set_seed(seed)
 from src.classification.online.rf_opt import RF
 from src.classification.online.lr_opt import LR
 from src.classification.online.xgb_opt import XGB
-
+import argparse
 
 class Main:
     # Costante dove salviamo il percorso della cartella dove viene serializzato lo stream
-    STREAMFOLDERPATH = 'brazilian'
+    STREAMFOLDERPATH = args.dataset
     MODELSFOLDERPATH = 'serialized_models/online'
 
     """
@@ -32,16 +32,23 @@ class Main:
         self.__main(start, end, serialized)
 
     def __main(self, start: str, end: str, serialized: str):
+        parser = argparse.ArgumentParser()
+        args = parser.parse_args()
+        parser.add_argument('-dataset', type=str, help="Dataset name")
+        name = args.dataset
+        if name =='brazilian':
+            train_percentage = 93
+        else:
+            train_percentage = 7
+            
         files = os.listdir(self.STREAMFOLDERPATH)
         files = sorted(files)
         strategy = 'D'
-        train_percentage = 93#7
         stream_loader = PickleLoader(self.STREAMFOLDERPATH, files, start=files[0], end=files[-1])
         scaler = MinMaxScaler()
         number_of_model = 1
         list_t = []
         j = 0
-        name = 'brazilian'
         best_params = None
         dict_ens = {}
         method = 'LR'
