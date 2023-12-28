@@ -20,7 +20,7 @@ import argparse
 
 class Main:
     # Costante dove salviamo il percorso della cartella dove viene serializzato lo stream
-    STREAMFOLDERPATH = 'brazilian'
+    STREAMFOLDERPATH = args.dataset
     MODELSFOLDERPATH = 'serialized_models/online'
 
 
