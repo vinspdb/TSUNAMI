@@ -35,6 +35,8 @@ class Main:
         parser = argparse.ArgumentParser()
         args = parser.parse_args()
         parser.add_argument('-dataset', type=str, help="Dataset name")
+        parser.add_argument('-classifier', type=str, help="Classifier: XGB, LR or RF")
+
         name = args.dataset
         if name =='brazilian':
             train_percentage = 93
@@ -51,7 +53,7 @@ class Main:
         j = 0
         best_params = None
         dict_ens = {}
-        method = 'LR'
+        method = args.classifier
         for df in stream_loader:
             list_t.append(df)
             if j == train_percentage-1:
