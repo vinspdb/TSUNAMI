@@ -22,3 +22,13 @@ doi={10.1007/s10844-023-00838-5},
 url={https://doi.org/10.1007/s10844-023-00838-5}
 }
 ```
+
+# How to use:
+
+TSUNAMI requires the following parameter:
+
+- dataset: brazilian or churn_retail
+
+```
+python -m src.classification.online.main_tsunami -dataset brazilian
+```
