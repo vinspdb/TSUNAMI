@@ -16,7 +16,7 @@ seed = 123
 np.random.seed(seed)
 tf.random.set_seed(seed)
 import time
-
+import argparse
 
 class Main:
     # Costante dove salviamo il percorso della cartella dove viene serializzato lo stream
@@ -31,13 +31,19 @@ class Main:
         files = os.listdir(self.STREAMFOLDERPATH)
         files = sorted(files)
         strategy = 'D'
-        train_percentage = 93#7
         stream_loader = PickleLoader(self.STREAMFOLDERPATH, files, start=files[0], end=files[-1])
         scaler = MinMaxScaler()
         number_of_model = 1
         list_t = []
         j = 0
-        name = 'brazilian'
+        parser = argparse.ArgumentParser()
+        args = parser.parse_args()
+        parser.add_argument('-dataset', type=str, help="Dataset name")
+        name = args.dataset
+        if name =='brazilian':
+            train_percentage = 93
+        else:
+            train_percentage = 7
         best_params = None
         dict_ens = {}
 
