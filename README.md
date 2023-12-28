@@ -32,3 +32,11 @@ TSUNAMI requires the following parameter:
 ```
 python -m src.classification.online.main_tsunami -dataset brazilian
 ```
+Baseline requere the following parameters:
+
+- dataset: brazilian or churn_retail
+- classifier: XGB, LR or RF
+
+```
+python -m src.classification.online.main_baseline -dataset brazilian -classifier XGB
+```
