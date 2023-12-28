@@ -21,7 +21,7 @@ import argparse
 
 class Main:
     # Costante dove salviamo il percorso della cartella dove viene serializzato lo stream
-    STREAMFOLDERPATH = args.dataset
+    STREAMFOLDERPATH = ''
     MODELSFOLDERPATH = 'serialized_models/online'
 
     """
@@ -40,7 +40,7 @@ class Main:
             train_percentage = 93
         else:
             train_percentage = 7
-            
+        self.STREAMFOLDERPATH = args.dataset
         files = os.listdir(self.STREAMFOLDERPATH)
         files = sorted(files)
         strategy = 'D'
